@@ -13,64 +13,52 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-/* Babylon Mesh Component Template */
+/* Babylon Camera Component Template */
 var PROJECT;
-/* Babylon Mesh Component Template */
+/* Babylon Camera Component Template */
 (function (PROJECT) {
-    var MeshDetails = /** @class */ (function (_super) {
-        __extends(MeshDetails, _super);
-        function MeshDetails(owner, scene, tick, propertyBag) {
+    var CamComp = /** @class */ (function (_super) {
+        __extends(CamComp, _super);
+        function CamComp(owner, scene, tick, propertyBag) {
             if (tick === void 0) { tick = true; }
             if (propertyBag === void 0) { propertyBag = {}; }
             return _super.call(this, owner, scene, tick, propertyBag) || this;
         }
-        MeshDetails.prototype.ready = function () {
+        CamComp.prototype.ready = function () {
             // Scene execute when ready
         };
-        MeshDetails.prototype.start = function () {
-            this.mesh.metadata = "button";
+        CamComp.prototype.start = function () {
+            var hello = this.getProperty("Hello", "Hello World");
+            var cam = this.getProperty("localCamera", this.camera);
+            var inputManager = cam.inputs;
+            var leftJoystick = new BABYLON.VirtualJoystick(false);
+            var rightJoystick = new BABYLON.VirtualJoystick(false);
+            var canvas = document.getElementsByTagName("canvas");
+            cam.attachControl(canvas[0], true);
+            var btn = document.getElementById("babylonVRiconbtn");
+            BABYLON.VirtualJoystick.Canvas.style.zIndex == "-1";
+            btn.onclick = function () {
+                if (BABYLON.VirtualJoystick.Canvas.style.zIndex == "-1") {
+                    cam.inputs.add(cam.inputs.attached.PointerTouch);
+                    BABYLON.VirtualJoystick.Canvas.style.zIndex = "4";
+                }
+                else {
+                    cam.inputs.add(new BABYLON.ArcRotateCameraVRDeviceOrientationInput());
+                    cam.inputs.remove(cam.inputs.attached.PointerTouch);
+                    BABYLON.VirtualJoystick.Canvas.style.zIndex = "-1";
+                }
+            };
+            console.log(cam.fov);
         };
-        MeshDetails.prototype.update = function () {
-            // Update render loop function
+        CamComp.prototype.update = function () {
         };
-        MeshDetails.prototype.after = function () {
+        CamComp.prototype.after = function () {
             // After render loop function
         };
-        MeshDetails.prototype.destroy = function () {
+        CamComp.prototype.destroy = function () {
             // Destroy component function
         };
-        return MeshDetails;
-    }(BABYLON.MeshComponent));
-    PROJECT.MeshDetails = MeshDetails;
-})(PROJECT || (PROJECT = {}));
-/* Babylon Scene Controller Template */
-var PROJECT;
-/* Babylon Scene Controller Template */
-(function (PROJECT) {
-    var SceneController = /** @class */ (function (_super) {
-        __extends(SceneController, _super);
-        function SceneController(owner, scene, tick, propertyBag) {
-            if (tick === void 0) { tick = true; }
-            if (propertyBag === void 0) { propertyBag = {}; }
-            return _super.call(this, owner, scene, tick, propertyBag) || this;
-        }
-        SceneController.prototype.ready = function () {
-            // Scene execute when ready
-        };
-        SceneController.prototype.start = function () {
-            var hello = this.getProperty("hello", "Hello World");
-            //console.log(hello);
-        };
-        SceneController.prototype.update = function () {
-            // Update render loop function
-        };
-        SceneController.prototype.after = function () {
-            // After render loop function
-        };
-        SceneController.prototype.destroy = function () {
-            // Destroy component function
-        };
-        return SceneController;
-    }(BABYLON.MeshComponent));
-    PROJECT.SceneController = SceneController;
+        return CamComp;
+    }(BABYLON.CameraComponent));
+    PROJECT.CamComp = CamComp;
 })(PROJECT || (PROJECT = {}));

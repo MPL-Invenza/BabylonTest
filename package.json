@@ -1,0 +1,27 @@
+{
+  "name": "babylontest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "babylonjs": "^4.2.0",
+    "nodejs": "^0.0.0"
+  },
+  "devDependencies": {
+    "@babylonjs/core": "^4.2.0",
+    "@babylonjs/inspector": "^4.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergiovaldiviampl/BabylonTest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergiovaldiviampl/BabylonTest/issues"
+  },
+  "homepage": "https://github.com/sergiovaldiviampl/BabylonTest#readme"
+}

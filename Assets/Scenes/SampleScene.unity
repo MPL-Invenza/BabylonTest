@@ -627,6 +627,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -712,14 +713,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   babylonClass: BABYLON.UniversalCameraRig
-  cameraType: 0
+  cameraType: 5
   cameraInput: 1
   cameraSpeed: 0
   inputMoveSpeed: 0
   inputRotateSpeed: 0.005
   inertiaScaleFactor: 0.009
-  interaxialDistance: 0.045
-  useMovementKeys: 1
+  interaxialDistance: 0.277
+  useMovementKeys: 0
   applyCameraGravity: 1
   multiPlayerStartup: 1
   stereoSideBySide: 1
@@ -761,6 +762,22 @@ MonoBehaviour:
       defaultHeight: 1.7
       positionScale: 1
       floorMeshesTags: Navigation
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c154a4f6d7d6b842a5161980ac91b64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  babylonClass: PROJECT.CamComp
+  hello: Hello World
+  number: 0
+  localCamera: {fileID: 963194227}
 --- !u!1001 &1091967145
 PrefabInstance:
   m_ObjectHideFlags: 0
