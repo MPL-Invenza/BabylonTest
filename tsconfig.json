@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "target": "ES5",
+        "module": "system",
+        "allowJs" : false,
+        "declaration": true,
+        "inlineSources": false,
+        "inlineSourceMap": false,
+        "outFile": "D:/Back Up- Unity/BabylonTest/Export/debug/BabylonTest.js"
+    },
+    "include": [
+        "assets/**/*"
+    ]    
+}
